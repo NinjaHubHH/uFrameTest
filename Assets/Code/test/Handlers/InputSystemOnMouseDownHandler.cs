@@ -35,6 +35,26 @@ namespace test {
         
         private int ActionNode4_Result = default( System.Int32 );
         
+        private object ActionNode8_a = default( System.Object );
+        
+        private object ActionNode8_b = default( System.Object );
+        
+        private int IntNode9 = 0;
+        
+        private bool ActionNode8_Result = default( System.Boolean );
+        
+        private UnityEngine.GameObject ActionNode10_gameObject = default( UnityEngine.GameObject );
+        
+        private int ActionNode12_in = default( System.Int32 );
+        
+        private int IntNode11 = 0;
+        
+        private float ActionNode12_Result = default( System.Single );
+        
+        private float ActionNode10_time = default( System.Single );
+        
+        private object ActionNode13_message = default( System.Object );
+        
         public uFrame.ECS.UnityUtilities.MouseDownDispatcher Event {
             get {
                 return _Event;
@@ -53,17 +73,38 @@ namespace test {
             }
         }
         
-        public virtual System.Collections.IEnumerator Execute() {
+        public virtual void Execute() {
             ActionNode4_a = Source.health;
             ActionNode4_b = IntNode3;
             // ActionNode
-            while (this.DebugInfo("8db86060-7116-447c-8f93-aa1efa9d7b06","1dd6cc4c-759e-4c56-ab4c-d7c357633933", this) == 1) yield return null;
             // Visit uFrame.ECS.Actions.IntLibrary.Subtract
             ActionNode4_Result = uFrame.ECS.Actions.IntLibrary.Subtract(ActionNode4_a, ActionNode4_b);
             // SetVariableNode
-            while (this.DebugInfo("1dd6cc4c-759e-4c56-ab4c-d7c357633933","8cd27c30-9c00-4c75-a797-3bae24115ea3", this) == 1) yield return null;
             Source.health = (System.Int32)ActionNode4_Result;
-            yield break;
+            ActionNode8_a = Source.health;
+            ActionNode8_b = IntNode9;
+            // ActionNode
+            // Visit uFrame.ECS.Actions.Comparisons.AreEqual
+            ActionNode8_Result = uFrame.ECS.Actions.Comparisons.AreEqual(ActionNode8_a, ActionNode8_b, ActionNode8_yes, ActionNode8_no);
+            ActionNode13_message = Source.health;
+            // ActionNode
+            // Visit uFrame.ECS.Actions.DebugLibrary.LogMessage
+            uFrame.ECS.Actions.DebugLibrary.LogMessage(ActionNode13_message);
+        }
+        
+        private void ActionNode8_yes() {
+            ActionNode10_gameObject = Source.gameObject;
+            ActionNode12_in = IntNode11;
+            // ActionNode
+            // Visit uFrame.ECS.Actions.Converter.IntToFloat
+            ActionNode12_Result = uFrame.ECS.Actions.Converter.IntToFloat(ActionNode12_in);
+            ActionNode10_time = ActionNode12_Result;
+            // ActionNode
+            // Visit uFrame.ECS.Actions.DestroyLibrary.DestroyGameObject
+            uFrame.ECS.Actions.DestroyLibrary.DestroyGameObject(ActionNode10_gameObject, ActionNode10_time);
+        }
+        
+        private void ActionNode8_no() {
         }
     }
 }

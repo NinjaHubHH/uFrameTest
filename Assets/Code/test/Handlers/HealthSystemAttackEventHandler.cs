@@ -47,13 +47,11 @@ namespace test {
             }
         }
         
-        public virtual System.Collections.IEnumerator Execute() {
+        public virtual void Execute() {
             // PublishEventNode
-            while (this.DebugInfo("","8db86060-7116-447c-8f93-aa1efa9d7b06", this) == 1) yield return null;
             var PublishEventNode1_Event = new AttackEvent();
             System.Publish(PublishEventNode1_Event);
             PublishEventNode1_Result = PublishEventNode1_Event;
-            yield break;
         }
     }
 }

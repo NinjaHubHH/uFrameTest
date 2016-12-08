@@ -3,6 +3,7 @@
 	"Custom":false	, 
 	"MetaType":"uFrame.ECS.UnityUtilities.MouseDownDispatcher"	, 
 	"VariableCount":0	, 
+	"StartActionId":"1dd6cc4c-759e-4c56-ab4c-d7c357633933"	, 
 	"VariableName":"HandlerNode2"	, 
 	"Name":"InputSystemOnMouseDown"	, 
 	"Order":0	, 

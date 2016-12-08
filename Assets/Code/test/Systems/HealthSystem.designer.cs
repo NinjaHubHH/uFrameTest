@@ -60,7 +60,7 @@ namespace test {
             handler.System = this;
             handler.Event = data;
             handler.Group = group;
-            StartCoroutine(handler.Execute());
+            handler.Execute();
         }
         
         protected void HealthSystemAttackEventFilter(test.AttackEvent data) {
